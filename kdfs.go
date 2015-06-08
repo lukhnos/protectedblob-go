@@ -1,4 +1,4 @@
-package protectedblob // import "lukhnos.org/protectedblob"
+package protectedblob
 
 import (
 	"crypto/aes"

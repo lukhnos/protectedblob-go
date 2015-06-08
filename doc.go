@@ -32,4 +32,4 @@ the envelopes. To install the command line tool:
 This is a Go port of protectedblob-py
 (https://github.com/lukhnos/protectedblob-py).
 */
-package protectedblob // import "lukhnos.org/protectedblob"
+package protectedblob

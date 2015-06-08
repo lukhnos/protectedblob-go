@@ -16,7 +16,7 @@ this implements an encrypt-then-MAC authenticated encryption scheme.
 ```go
 package main
 
-import "lukhnos.org/protectedblob"
+import "github.com/lukhnos/protectedblob-go"
 
 func someFunc() {
     envelope, _ := protectedblob.Create(plaintext, passphrase, rounds)
@@ -31,6 +31,7 @@ func someFunc() {
 A command line tool under the same name is also provided to create and use
 the envelopes. To install the command line tool:
 
-    go get lukhnos.org/protectedblob/cmd/protectedblob
+    go get github.com/lukhnos/protectedblob-go
+    go install github.com/lukhnos/protectedblob-go/...
 
 This is a Go port of [protectedblob-py](https://github.com/lukhnos/protectedblob-py).
