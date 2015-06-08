@@ -4,10 +4,10 @@ import (
 	"errors"
 	"flag"
 	"fmt"
+	"github.com/lukhnos/protectedblob-go"
 	"golang.org/x/crypto/ssh/terminal"
 	"io/ioutil"
 	"log"
-	"lukhnos.org/protectedblob"
 	"os"
 )
 
