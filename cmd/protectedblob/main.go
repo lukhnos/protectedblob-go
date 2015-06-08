@@ -4,11 +4,10 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	// "io"
-	"io/ioutil"
+	"github.com/lukhnos/protectedblob-go"
 	"golang.org/x/crypto/ssh/terminal"
+	"io/ioutil"
 	"log"
-	"lukhnos.org/protectedblob-go"
 	"os"
 )
 
@@ -158,7 +157,7 @@ func main() {
 
 	var dstFile = os.Stdout
 	if *output != "" {
-		dstFile, err = os.OpenFile(*output, os.O_CREATE | os.O_WRONLY | os.O_TRUNC, 0600)
+		dstFile, err = os.OpenFile(*output, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0600)
 		if err != nil {
 			log.Fatal(err)
 		}
