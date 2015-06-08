@@ -1,4 +1,4 @@
-package main
+package main // import "lukhnos.org/protectedblob/cmd/protectedblob"
 
 import (
 	"errors"
