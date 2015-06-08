@@ -1,6 +1,8 @@
 protectedblob
 =============
 
+[![Build Status](https://travis-ci.org/lukhnos/protectedblob-go.svg?branch=master)](https://travis-ci.org/lukhnos/protectedblob-go)
+
 Package protectedblob can create passphrase-protected wrappers for binary
 blobs (any non-empty arbitary byte arrays).
 
@@ -12,15 +14,24 @@ with the encrypted data and another key derived from the passphrase. Together,
 this implements an encrypt-then-MAC authenticated encryption scheme.
 
 ```go
-envelope, _ := protectedblob.Create(plaintext, passphrase, rounds)
-jsonBytes, _ := envelope.ToJSON()
-// Write out the JSON.
+package main
 
-envelope, _ := protectedblob.FromJSON(jsonBytes)
-plaintext, _ := envelope.GetPlaintext(passphrase)
+import "github.com/lukhnos/protectedblob-go"
+
+func someFunc() {
+    envelope, _ := protectedblob.Create(plaintext, passphrase, rounds)
+    jsonBytes, _ := envelope.ToJSON()
+    // Write out the JSON.
+
+    envelope, _ := protectedblob.FromJSON(jsonBytes)
+    plaintext, _ := envelope.GetPlaintext(passphrase)
+}
 ```
 
 A command line tool under the same name is also provided to create and use
-the envelopes.
+the envelopes. To install the command line tool:
+
+    go get github.com/lukhnos/protectedblob-go
+    go install github.com/lukhnos/protectedblob-go/...
 
 This is a Go port of [protectedblob-py](https://github.com/lukhnos/protectedblob-py).
