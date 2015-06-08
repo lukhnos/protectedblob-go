@@ -1,6 +1,4 @@
-protectedblob
-=============
-
+/*
 Package protectedblob can create passphrase-protected wrappers for binary
 blobs (any non-empty arbitary byte arrays).
 
@@ -11,16 +9,17 @@ with an HMAC (hash-based message authentication code). The HMAC is computed
 with the encrypted data and another key derived from the passphrase. Together,
 this implements an encrypt-then-MAC authenticated encryption scheme.
 
-```go
-envelope, _ := protectedblob.Create(plaintext, passphrase, rounds)
-jsonBytes, _ := envelope.ToJSON()
-// Write out the JSON.
+	envelope, _ := protectedblob.Create(plaintext, passphrase, rounds)
+	jsonBytes, _ := envelope.ToJSON()
+	// Write out the JSON.
 
-envelope, _ := protectedblob.FromJSON(jsonBytes)
-plaintext, _ := envelope.GetPlaintext(passphrase)
-```
+	envelope, _ := protectedblob.FromJSON(jsonBytes)
+	plaintext, _ := envelope.GetPlaintext(passphrase)
 
 A command line tool under the same name is also provided to create and use
 the envelopes.
 
-This is a Go port of [protectedblob-py](https://github.com/lukhnos/protectedblob-py).
+This is a Go port of protectedblob-py
+(https://github.com/lukhnos/protectedblob-py).
+*/
+package protectedblob
